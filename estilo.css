@@ -1,0 +1,193 @@
+/* ----- 1. CONFIGURACIÓN GENERAL ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Usamos una pila de fuentes de sistema: moderna, rápida y legible */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f4f4; /* Un fondo gris neutro y suave */
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+/* ----- 2. LAYOUT PRINCIPAL (FRAMES) ----- */
+
+/*
+ * El frame ahora es solo un contenedor de posicionamiento.
+ * Le damos "padding" para crear un espacio alrededor de la tarjeta de contenido.
+*/
+.frame {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow: hidden; /* La tarjeta interna gestionará su propio scroll */
+  padding: 20px;
+  /* Eliminamos fondos, bordes y sombras de aquí */
+}
+
+/* Frame A (Izquierda) */
+#frameA {
+  left: 0;
+  width: 30%;
+  background-color: #eaf4ff;  /* Azul */
+}
+
+/* Frame B (Centro) */
+#frameB {
+  left: 30%;
+  width: 40%;
+  background-color: #f0f8ff;  /* Celeste Claro */
+}
+
+/* Frame C (Derecha) */
+#frameC {
+  left: 70%;
+  width: 30%;
+  background-color: #eaf4ff;  /* Azul */
+}
+
+/* ----- 3. COMPONENTES GENERALES (Dentro de Frames) ----- */
+
+/* Etiqueta para mostrar el nombre del frame */
+.titulo-frame {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600; /* Un poco más fino que "bold" */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+/* * Esta es la "tarjeta" blanca donde vivirá todo el contenido.
+ * Aquí es donde aplicamos el diseño elegante.
+*/
+.contenido-frame {
+  padding: 25px; /* Más espaciado interno */
+  border-radius: 8px;
+  background-color: #ffffff;
+  /* Una sombra sutil y moderna */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  /* Un borde muy fino para definir la tarjeta */
+  border: 1px solid #e0e0e0;
+  height: 100%; /* Ocupa todo el espacio del .frame padre */
+  overflow: auto; /* Permite scroll SI el contenido es muy largo */
+}
+
+/* ----- 4. ESTILOS ESPECÍFICOS POR FRAME ----- */
+
+/* --- Contenido: Frame A --- */
+#frameA h1 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+#frameA .foto {
+  width: 120px;
+  border-radius: 50%;
+  /* Usamos un color de acento azul profundo y elegante */
+  border: 4px solid #0056b3;
+  margin-bottom: 10px;
+}
+
+#frameA p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #555;
+  line-height: 1.6; /* Más espacio entre líneas para leer mejor */
+}
+
+#frameA .gif {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 150px;
+}
+
+/* --- Contenido: Frame B --- */
+#frameB h2 {
+  color: #333;
+  text-align: left; /* Títulos alineados a la izquierda son más formales */
+  margin-bottom: 15px;
+  /* Un sutil separador */
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+#frameB iframe {
+  width: 100%;
+  height: 90%;
+  border: 1px solid #ddd; /* Un borde ligero para el iframe */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Contenido: Frame C (Formulario) --- */
+#frameC h2 {
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+#frameC form {
+  display: flex;
+  flex-direction: column;
+}
+
+#frameC label {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 5px; /* Espacio entre etiqueta y campo */
+}
+
+/* Estilo unificado para campos de formulario */
+#frameA select,
+#frameC input,
+#frameC select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0;
+  font-size: 16px;
+  background-color: #fcfcfc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto focus para campos de formulario */
+#frameA select:focus,
+#frameC input:focus,
+#frameC select:focus {
+  outline: none;
+  border-color: #0056b3; /* Resalta con el color de acento */
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
+}
+
+/* Botón elegante */
+#frameC button {
+  margin-top: 20px;
+  background-color: #0056b3; /* Color de acento */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#frameC button:hover {
+  background-color: #004494; /* Un azul más oscuro al pasar el ratón */
+  /* Sutil efecto de "levantar" el botón */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
